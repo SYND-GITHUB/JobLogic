@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="person"
+            type="com.synd.joblogic.model.api.Person" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/padding_large"
+        tools:ignore="MissingConstraints">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/text_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{String.format(@string/name_format, person.name)}"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_16" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/text_number"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_10"
+            android:text="@{String.format(@string/number_format, person.number)}"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_14"
+            app:layout_constraintTop_toBottomOf="@id/text_name" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

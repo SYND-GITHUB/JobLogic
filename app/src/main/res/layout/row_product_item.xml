@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="item"
+            type="com.synd.joblogic.model.api.BaseItem" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/padding_large"
+        tools:ignore="MissingConstraints">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/text_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{String.format(@string/name_format, item.name)}"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_16" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/text_price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_10"
+            android:text="@{String.format(@string/price_format, item.price)}"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_14"
+            app:layout_constraintTop_toBottomOf="@id/text_name" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/text_quantity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_10"
+            android:text="@{String.format(@string/quantity_format, item.quantity)}"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_14"
+            app:layout_constraintTop_toBottomOf="@id/text_price" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

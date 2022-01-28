@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">JobLogic - SYND</string>
+    <string name="network_error">Network error</string>
+    <string name="internal_server_error">Internal server error</string>
+    <string name="no_network_error">No internet connection!</string>
+    <string name="text_okay">OK</string>
+    <string name="text_cancel">Cancel</string>
+    <string name="loading_data">Loading data...</string>
+    <string name="empty">Empty</string>
+    <string name="call_list">Call List</string>
+    <string name="buy_list">Buy List</string>
+    <string name="sell_list">Sell List</string>
+    <string name="name_format">Name: %s</string>
+    <string name="number_format">Number: %s</string>
+    <string name="price_format">Price: %s</string>
+    <string name="quantity_format">Quantity: %s</string>
+</resources>
