@@ -5,11 +5,10 @@ import org.koin.core.qualifier.named
 import org.koin.dsl.module
 
 
-var splashActivityModule = module {
+var activityModule = module {
 
     scope(named<MainActivity>()) {
         scoped {
-            //todo define provide object here  which is used for splashActivty Scope only
         }
     }
 }

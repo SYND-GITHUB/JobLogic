@@ -21,6 +21,9 @@ class CallListActivity : BaseRecyclerActivity() {
     private lateinit var mAdapter: CallListAdapter
     private var dataList = mutableListOf<Person>()
 
+    override val enableBackToolbar: Boolean = true
+    override val toolbarTitle: Int = R.string.call_list
+
     private val personListObserver: Observer<ApiResponse<List<Person>>> by lazy {
         Observer<ApiResponse<List<Person>>> {
             handleGlobalSettingResponse(it)

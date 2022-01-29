@@ -12,7 +12,7 @@ open class BaseItem : Serializable {
 
     @ColumnInfo(name = "price")
     @SerializedName("price")
-    var price: Long = 0L
+    var price: Float = 0F
 
     @ColumnInfo(name = "quantity")
     @SerializedName("quantity")

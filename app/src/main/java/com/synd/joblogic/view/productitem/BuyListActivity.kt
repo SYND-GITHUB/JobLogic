@@ -21,6 +21,9 @@ class BuyListActivity : BaseRecyclerActivity() {
     private lateinit var mAdapter: ItemListAdapter
     private var dataList = mutableListOf<ItemToBuy>()
 
+    override val enableBackToolbar: Boolean = true
+    override val toolbarTitle: Int = R.string.buy_list
+
     private val itemListObserver: Observer<ApiResponse<List<ItemToBuy>>> by lazy {
         Observer<ApiResponse<List<ItemToBuy>>> {
             handleGlobalSettingResponse(it)

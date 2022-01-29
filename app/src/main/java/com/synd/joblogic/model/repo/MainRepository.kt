@@ -18,8 +18,8 @@ import retrofit2.Response
 
 class MainRepository(
     private val apiServices: ApiServices,
-    private val preferences: PreferenceHelper,
-    private val mainDao: MainDao
+    private val preferences: PreferenceHelper? = null,
+    private val mainDao: MainDao? = null
 ) : KoinComponent {
 
     /** ReflectionUtil get Object using koin DI
@@ -34,17 +34,17 @@ class MainRepository(
             /** If you want to save to DB, let override methods below */
 //            override fun saveResult(result: List<Person>) {
 //                result.run {
-//                    forEach { mainDao.insertPerson(it) }
-//                    preferences.put(PreferenceConstants.IS_PERSON_SAVED_TO_DB, true)
+//                    forEach { mainDao?.insertPerson(it) }
+//                    preferences?.put(PreferenceConstants.IS_PERSON_SAVED_TO_DB, true)
 //                }
 //            }
 //
 //            override fun shouldFetchFromDB(): Boolean {
-//                return preferences.getBoolean(PreferenceConstants.IS_PERSON_SAVED_TO_DB)
+//                return preferences?.getBoolean(PreferenceConstants.IS_PERSON_SAVED_TO_DB) ?: false
 //            }
 //
 //            override fun loadFromDB(): List<Person>? {
-//                return mainDao.retrieveAllPerson()
+//                return mainDao?.retrieveAllPerson()
 //            }
         }.execute()
     }
@@ -58,17 +58,17 @@ class MainRepository(
             /** If you want to save to DB, let override methods below */
 //            override fun saveResult(result: List<ItemToBuy>) {
 //                result.run {
-//                    forEach { mainDao.insertItemToBuy(it) }
-//                    preferences.put(PreferenceConstants.IS_ITEM_TO_BUY_SAVED_TO_DB, true)
+//                    forEach { mainDao?.insertItemToBuy(it) }
+//                    preferences?.put(PreferenceConstants.IS_ITEM_TO_BUY_SAVED_TO_DB, true)
 //                }
 //            }
 //
 //            override fun shouldFetchFromDB(): Boolean {
-//                return preferences.getBoolean(PreferenceConstants.IS_ITEM_TO_BUY_SAVED_TO_DB)
+//                return preferences?.getBoolean(PreferenceConstants.IS_ITEM_TO_BUY_SAVED_TO_DB) ?: false
 //            }
 //
 //            override fun loadFromDB(): List<ItemToBuy>? {
-//                return mainDao.retrieveAllItemToBuy()
+//                return mainDao?.retrieveAllItemToBuy()
 //            }
         }.execute()
     }
@@ -80,18 +80,19 @@ class MainRepository(
             }
 
             override fun saveResult(result: List<ItemToSell>) {
-                result.run {
-                    forEach { mainDao.insertItemToSell(it) }
-                    preferences.put(PreferenceConstants.IS_ITEM_TO_SELL_SAVED_TO_DB, true)
-                }
+//                result.run {
+//                    forEach { mainDao?.insertItemToSell(it) }
+//                    preferences?.put(PreferenceConstants.IS_ITEM_TO_SELL_SAVED_TO_DB, true)
+//                }
             }
 
             override fun shouldFetchFromDB(): Boolean {
-                return preferences.getBoolean(PreferenceConstants.IS_ITEM_TO_SELL_SAVED_TO_DB)
+//                return preferences?.getBoolean(PreferenceConstants.IS_ITEM_TO_SELL_SAVED_TO_DB) ?: false
+                return true
             }
 
             override fun loadFromDB(): List<ItemToSell>? {
-                return mainDao.retrieveAllItemToSell()
+                return mainDao?.retrieveAllItemToSell()
             }
         }.execute()
     }

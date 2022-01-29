@@ -34,7 +34,7 @@ class MyApplication : Application(), Application.ActivityLifecycleCallbacks {
 
     /*** function to get all di modules array*/
     private fun getModule(): Iterable<Module> {
-        return listOf(appModule, viewModelModule, databaseModule, repoModule, splashActivityModule)
+        return listOf(appModule, viewModelModule, databaseModule, repoModule, activityModule)
     }
 
     override fun onActivityPaused(activity: Activity) {

@@ -14,9 +14,9 @@ class MainActivity : BaseActivity(), MainInteract {
 
     private lateinit var binding: ActivityMainBinding
 
-    override fun getLayout(): Int {
-        return R.layout.activity_main
-    }
+    override val layout: Int = R.layout.activity_main
+    override val enableBackToolbar: Boolean = false
+    override val toolbarTitle: Int = R.string.main
 
     override fun initUI(binding: ViewDataBinding?) {
         this.binding = binding as ActivityMainBinding

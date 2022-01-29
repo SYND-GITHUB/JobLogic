@@ -19,6 +19,10 @@ apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 apply plugin: 'kotlin-kapt'
 
+def configPropertiesFile = rootProject.file("config.properties")
+def configProperties = new Properties()
+configProperties.load(new FileInputStream(configPropertiesFile))
+
 android {
     compileSdkVersion 30
     defaultConfig {
@@ -28,6 +32,9 @@ android {
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+        buildConfigField("String", "DB_ITEM_SELL_ASSET_PATH", configProperties['DB_ITEM_SELL_ASSET_PATH'])
+        buildConfigField("String", "DB_ITEM_SELL_STORAGE_PATH", configProperties['DB_ITEM_SELL_STORAGE_PATH'])
     }
     buildTypes {
         release {
@@ -53,7 +60,6 @@ android {
     }
     dexOptions {
         javaMaxHeapSize "4g"
-
     }
 }
 
@@ -88,16 +94,14 @@ dependencies {
     implementation networkDependencies.kotlinCoroutineAdapterFactory
 
     // Koin DI
-    implementation kotlinDI.core
-    implementation kotlinDI.scope
-    implementation kotlinDI.viewModel
+    implementation koinDI.core
+    implementation koinDI.scope
+    implementation koinDI.viewModel
 
     // Testing Dependencies
-    androidTestImplementation androidxTestingDependencies.archCore
-    androidTestImplementation androidxTestingDependencies.core
-    androidTestImplementation androidxTestingDependencies.contrib
-    androidTestImplementation androidxTestingDependencies.intents
-    androidTestImplementation androidxTestingDependencies.uiAutoMator
-    testImplementation "junit:junit:$junitVersion"
+    androidTestImplementation testingDependencies.androidXCore
+    testImplementation testingDependencies.junit
+    testImplementation testingDependencies.mockito
+    testImplementation testingDependencies.coroutines
 }
 

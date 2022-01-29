@@ -10,9 +10,7 @@ import com.synd.joblogic.databinding.ActivityRecyclerBinding
 abstract class BaseRecyclerActivity : BaseActivity() {
     private lateinit var binding: ActivityRecyclerBinding
 
-    override fun getLayout(): Int {
-        return R.layout.activity_recycler
-    }
+    override val layout: Int = R.layout.activity_recycler
 
     override fun initUI(binding: ViewDataBinding?) {
         this.binding = binding as ActivityRecyclerBinding
