@@ -29,6 +29,7 @@
 -keepclassmembernames class kotlinx.** {
     volatile <fields>;
 }
+-keep class com.synd.joblogic.model.** { *; }
 
 # Koin Proguard Rules
 -dontusemixedcaseclassnames

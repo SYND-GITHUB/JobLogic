@@ -31,7 +31,6 @@ abstract class DataFetchCall<ResultType>(private val responseLiveData: MutableLi
                     if (request.body() != null)
                         saveResult(request.body()!!)
                     responseLiveData.postValue(ApiResponse.success(request.body()!!))
-                    Log.e("synd", "ok")
                 } else {
                     responseLiveData.postValue(
                         ApiResponse.error(
@@ -44,7 +43,6 @@ abstract class DataFetchCall<ResultType>(private val responseLiveData: MutableLi
                     )
                 }
             } catch (exception: Exception) {
-                Log.e("synd", "" + exception)
                 exception.printStackTrace()
                 responseLiveData.postValue(
                     ApiResponse.error(
