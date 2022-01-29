@@ -43,7 +43,7 @@ screen, you will fetch data from a local store.
 ## Guideline
 
 - **Create local database:** CREATE TABLE "ItemToSell" ( "id" INTEGER NOT NULL, "name" TEXT NOT NULL, "price" REAL NOT NULL, "quantity" INTEGER NOT NULL, "type" INTEGER NOT NULL, PRIMARY KEY("id") )
-- **Add local database to source:** Save db file as "synd_joblogic.db", then copy it to the asset/storage directory, edit file [config.properties] to provide file path. Now it's locating at assset/database/synd_joblogic.db
+- **Add local database to source:** Save db file as "synd_joblogic.db", then copy it to the asset/storage directory, edit file [config.properties] to provide file path. Now it's locating at assets/database/synd_joblogic.db
 
 
 
